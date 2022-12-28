@@ -1,0 +1,15 @@
+PROGRAM:
+  0
+  DO
+    DUP FIB PRINT
+    1 +
+    DUP 20 LESS-EQUAL
+  WHILE
+
+FIB:
+  DUP 2 GREATER-EQUAL IF
+    1 -
+    DUP 1 -
+    FIB SWAP FIB
+    +
+  THEN

@@ -1,0 +1,60 @@
+WHITESPACE = _{" " | "\r" | "\n" | "\t"}
+COMMENT = _{ "/*" ~ (!"*/" ~ ANY)* ~ "*/" }
+
+program = { SOI ~ routine* ~ EOI }
+
+routine = {
+	identifier ~ ":" ~ command*
+}
+
+command = _{
+    | while_block
+    | if_block
+    | number
+    | (add | sub | div | mul)
+    | string
+    | boolean
+    | (identifier ~ !":")
+}
+
+add = { "+" }
+sub = { "-" }
+div = { "/" }
+mul = { "*" }
+
+boolean = _{ true_ | false_ }
+true_ = { "TRUE" }
+false_ = { "FALSE" }
+
+number = @{
+    "-"?
+    ~ ("0" | ASCII_NONZERO_DIGIT ~ ASCII_DIGIT*)
+}
+
+// FIXME: Need to prevent reserved keywords but allow usage as prefix.
+identifier = @{
+    !(do | while | if | else | then | true_ | false_) ~
+	ASCII_ALPHA_UPPER ~ (ASCII_ALPHA_UPPER | "-")*
+}
+
+while_block = {
+	do ~ command* ~ while
+}
+do = _{ "DO" }
+while = _{ "WHILE" }
+
+if_block = {
+    | if ~ if_true ~ else ~ if_false ~ then
+    | if ~ if_true ~ then
+}
+if_true = { command* }
+if_false = { command* }
+if = _{ "IF" }
+else = _{ "ELSE" }
+then = _{ "THEN" }
+
+string = ${ "\"" ~ inner ~ "\"" }
+inner = @{ char* }
+char = {
+    !("\"") ~ ANY
+}
