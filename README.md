@@ -65,7 +65,7 @@ This programming language came from my dreams and it left a mark on me.
 I thought it would be funny to make a real.
 
 At the same time, I feel like it's quite interesting to explore a stack-based
-programming language and roleplay that we're in some "false-past" of early 
+programming language and roleplay as if we're in some "false-past" of early 
 computing, akin to the world building you find in [Zachtronics] games.
 
 [Zachtronics]: https://www.zachtronics.com
