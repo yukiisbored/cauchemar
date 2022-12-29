@@ -37,11 +37,24 @@ PLUS-FORTY-TWO:
 
 ## Planned features
 
+- Performance improvements
+  - Reduce copying as much as possible 
+  - [String interning]
 - Registers to store values outside of the stack
-- Error backtrace
+- Backtrace on panic
 - Human-readable parser errors
 - Terminal input
 - More standard routines
+  - Math routines
+  - String routines
+  - Stack manipulation routines
+  - Terminal IO routines
+- Interactive session
+  - Not an REPL, step through each commands while inspecting the internal VM
+    state.
+  - Hopefully runs within the web browser for accessibility.
+
+[String interning]: https://en.wikipedia.org/wiki/String_interning
 
 ## Frequently Asked Questions (F.A.Q)
 
@@ -50,6 +63,22 @@ PLUS-FORTY-TWO:
 This programming language came from my dreams and it left a mark on me.
 
 I thought it would be funny to make a real.
+
+At the same time, I feel like it's quite interesting to explore a stack-based
+programming language and roleplay that we're in some "false-past" of early 
+computing, akin to the world building you find in [Zachtronics] games.
+
+[Zachtronics]: https://www.zachtronics.com
+
+Today, stack-based computing takes a more background role as they're still
+widely-used as the basis of many virtual machines for a garden variety of
+programming languages or computing environments (i.e. [WebAssembly], [JVM],
+[CPython], [CLR]). 
+
+[WebAssembly]: https://en.wikipedia.org/wiki/WebAssembly
+[JVM]: https://en.wikipedia.org/wiki/Java_virtual_machine
+[CPython]: https://en.wikipedia.org/wiki/CPython
+[CLR]: https://en.wikipedia.org/wiki/Common_Language_Runtime
 
 ### What does the name mean?
 
