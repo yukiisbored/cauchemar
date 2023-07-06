@@ -1,3 +1,5 @@
+> **This project is archived and is succeeded by https://github.com/yukiisbored/zcauchemar**
+
 # Cauchemar
 
 Cauchemar is a stack-based programming language inspired by [FORTH] but more arcane.
